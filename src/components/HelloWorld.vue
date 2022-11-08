@@ -1,5 +1,9 @@
 <script>
+import LoginForm from './LoginForm.vue';
 export default {
+  components: {
+    LoginForm
+  },
   data() {
     return {
       message: ''
@@ -8,28 +12,24 @@ export default {
 }
 </script>
 <template>
-  <div>
-    
-  </div>
-  <div class="context">
-    <h1>Message is: {{ message }}</h1>
-    <input v-model="message" placeholder="edit me" />
-
-
-  </div>
-  <div class="area">
-    <ul class="circles">
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
+  <div class="wrapper">
+    <div class="area">
+      <ul class="circles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+    <div class="context">
+      <LoginForm />
+    </div>
   </div>
 
 </template>
@@ -38,10 +38,19 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
+.wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .context {
-  width: 100%;
   position: absolute;
-  top: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
 }
 
@@ -56,8 +65,9 @@ export default {
   background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
   width: 100%;
   height: 100vh;
-
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .circles {
@@ -67,6 +77,9 @@ export default {
   width: 100%;
   height: 100%;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .circles li {
